@@ -8,7 +8,7 @@ module.exports = {
 			},
 			minHeight: {
 				16: "4rem",
-				template: "calc(100vh - 6rem)",
+				template: "calc(100vh - 23rem)",
 			},
 		},
 	},

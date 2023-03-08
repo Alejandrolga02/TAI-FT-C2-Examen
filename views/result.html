@@ -14,7 +14,7 @@
 	const totalPagar = subtotal - impuestos;
 %>
 <main class="container__template bg-yellow-50">
-	<form class="container__form form__indigo" action="/" method="post" id="form">
+	<form class="container__form form__indigo">
 		<div class="w-full">
 			<label for="nombre" class="form__label">Nombre</label>
 			<input type="text" value="<%=nombre%>" name="nombre" id="nombre" class="form__input" readonly>
@@ -46,6 +46,10 @@
 		<div class="w-full">
 			<label for="totalPagar" class="form__label">Total a pagar</label>
 			<input type="number" value="<%=totalPagar%>" name="totalPagar" id="totalPagar" class="form__input" readonly>
+		</div>
+		<div class="form__buttons">
+			<button href="/" class="btn btn__danger">Limpiar</button>
+			<button type="submit" class="btn btn__success">Enviar</button>
 		</div>
 	</form>
 </main>
