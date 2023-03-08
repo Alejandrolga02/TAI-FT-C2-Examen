@@ -1,0 +1,42 @@
+<%- include('partials/header.html') %>
+<main class="container__template bg-yellow-50">
+	<form class="container__form form__indigo" action="/" method="post" id="form">
+		<div class="w-full">
+			<label for="numeroContrato" class="form__label">Numero de contrato</label>
+			<input type="number" name="numeroContrato" id="numeroContrato" class="form__input" placeholder="Introduzca el numero" required>
+		</div>
+		<div class="w-full">
+			<label for="nombre" class="form__label">Nombre</label>
+			<input type="text" name="nombre" id="nombre" class="form__input" placeholder="Introduzca un nombre" required>
+		</div>
+		<div class="w-full">
+			<label for="cliente" class="form__label">Domicilio</label>
+			<input type="text" name="domicilio" id="domicilio" class="form__input" placeholder="Introduzca un domicilio" required>
+		</div>
+		<div class="w-full">
+			<label for="nivelEstudios" class="form__label">Nivel de Estudios</label>
+			<select class="form__input" name="nivelEstudios" id="nivelEstudios" required>
+				<option value="-1" selected disabled>Seleccione una opcion</option>
+				<option value="1">Licenciatura</option>
+				<option value="2">Maestría</option>
+				<option value="3">Doctorado</option>
+			</select>
+		</div>
+		<div class="w-full">
+			<label for="pagoDiarioBase" class="form__label">Pago diario base</label>
+			<input type="number" name="pagoDiarioBase" id="pagoDiarioBase" class="form__input" placeholder="Introduzca una numero" required>
+		</div>
+		<div class="w-full">
+			<label for="diasTrabajados" class="form__label">Dias Trabajados</label>
+			<input type="number" name="diasTrabajados" id="diasTrabajados" class="form__input" placeholder="Introduzca un numero" required>
+		</div>
+		<div class="form__buttons">
+			<button type="reset" class="btn btn__danger">Limpiar</button>
+			<button type="submit" class="btn btn__success">Enviar</button>
+		</div>
+		<!-- <article class="alert">
+			<p class="alert__message">Rellene los campos validamente</>
+		</article> -->
+	</form>
+</main>
+<%- include('partials/footer.html') %>

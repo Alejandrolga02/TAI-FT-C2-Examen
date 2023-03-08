@@ -1,0 +1,52 @@
+<%- include('partials/header.html') %>
+<%
+	let subtotal = pagoDiarioBase * diasTrabajados;
+
+	if (nivelEstudios === 1) {
+		subtotal *= 1.20;
+	} else if (nivelEstudios === 2) {
+		subtotal *= 1.50;
+	} else if (nivelEstudios === 3) {
+		subtotal *= 2;
+	}
+
+	const impuestos = subtotal * 0.16;
+	const totalPagar = subtotal - impuestos;
+%>
+<main class="container__template bg-yellow-50">
+	<form class="container__form form__indigo" action="/" method="post" id="form">
+		<div class="w-full">
+			<label for="nombre" class="form__label">Nombre</label>
+			<input type="text" value="<%=nombre%>" name="nombre" id="nombre" class="form__input" readonly>
+		</div>
+		<div class="w-full">
+			<label for="grado" class="form__label">Grado</label>
+			<input type="text" value="<%=grado%>" name="grado" id="grado" class="form__input" readonly>
+		</div>
+		<div class="w-full">
+			<label for="domicilio" class="form__label">Domicilio</label>
+			<input type="text" value="<%=domicilio%>" name="domicilio" id="domicilio" class="form__input" readonly>
+		</div>
+		<div class="w-full">
+			<label for="diasTrabajados" class="form__label">Dias Trabajados</label>
+			<input type="number" value="<%=diasTrabajados%>" name="diasTrabajados" id="diasTrabajados" class="form__input" readonly>
+		</div>
+		<div class="w-full">
+			<label for="pagoDiarioBase" class="form__label">Pago diario base</label>
+			<input type="number" value="<%=pagoDiarioBase%>" name="pagoDiarioBase" id="pagoDiarioBase" class="form__input" readonly>
+		</div>
+		<div class="w-full">
+			<label for="subtotal" class="form__label">Subtotal</label>
+			<input type="number" value="<%=subtotal%>" name="subtotal" id="subtotal" class="form__input" readonly>
+		</div>
+		<div class="w-full">
+			<label for="impuestos" class="form__label">Impuestos 16%</label>
+			<input type="number" value="<%=impuestos%>" name="impuestos" id="impuestos" class="form__input" readonly>
+		</div>
+		<div class="w-full">
+			<label for="totalPagar" class="form__label">Total a pagar</label>
+			<input type="number" value="<%=totalPagar%>" name="totalPagar" id="totalPagar" class="form__input" readonly>
+		</div>
+	</form>
+</main>
+<%- include('partials/footer.html') %>
