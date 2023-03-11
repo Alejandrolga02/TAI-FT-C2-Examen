@@ -18,7 +18,7 @@ app.engine("html", require("ejs").renderFile);
 
 app.use(rutas);
 
-const puerto = 3000;
+const puerto = 2000;
 app.listen(puerto, () => {
 	console.log("Iniciando puerto " + puerto);
 });
